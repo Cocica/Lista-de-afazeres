@@ -8,28 +8,31 @@ list.addEventListener("click", checkDelete);
 filterOption.addEventListener("click", filterF);
 
 function addTarefa(event) {
-  event.preventDefault();
-  //cria div
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
-  //cria li e liga na div criada
-  const newItem = document.createElement("li");
-  newItem.innerText = input.value;
-  newItem.classList.add("item");
-  todoDiv.appendChild(newItem);
-  //cria botao check
-  const checkButton = document.createElement("button");
-  checkButton.innerHTML = '<i class="fas fa-check"></i>'; 
-  checkButton.classList.add("check-btn");
-  todoDiv.appendChild(checkButton);
-  //cria botao de lixeira
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-  trashButton.classList.add("trash-btn");
-  todoDiv.appendChild(trashButton);
-  //liga a div com todos os elementos criados na lista
-  list.appendChild(todoDiv);
-  input.value = "";
+  if (input.value !== ""){ //verifica se o valor inserido é diferente de vazio
+    event.preventDefault();
+    //cria div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    //cria li e liga na div criada
+    const newItem = document.createElement("li");
+    newItem.innerText = input.value;
+    newItem.classList.add("item");
+    todoDiv.appendChild(newItem);
+    //cria botao check
+    const checkButton = document.createElement("button");
+    checkButton.innerHTML = '<i class="fas fa-check"></i>'; 
+    checkButton.classList.add("check-btn");
+    todoDiv.appendChild(checkButton);
+    //cria botao de lixeira
+    const trashButton = document.createElement("button");
+    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.classList.add("trash-btn");
+    todoDiv.appendChild(trashButton);
+    //liga a div com todos os elementos criados na lista
+    list.appendChild(todoDiv);
+    input.value = "";
+  }
+  else alert("Insira uma tarefa !"); // se for vazio lança alerta
 }
 
 function checkDelete(event) {
