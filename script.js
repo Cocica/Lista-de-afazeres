@@ -17,9 +17,9 @@ function addTarefa(event) {
   newItem.innerText = input.value;
   newItem.classList.add("item");
   todoDiv.appendChild(newItem);
-  //cria botao chek
+  //cria botao check
   const checkButton = document.createElement("button");
-  checkButton.innerHTML = '<i class="fas fa-check"></i>';
+  checkButton.innerHTML = '<i class="fas fa-check"></i>'; 
   checkButton.classList.add("check-btn");
   todoDiv.appendChild(checkButton);
   //cria botao de lixeira
